@@ -1,0 +1,14 @@
+html, body {
+  height: 100%;
+}
+
+.tile {
+  width: 3%;
+  height: 50px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.debug {
+  border: 1px dotted red;
+}

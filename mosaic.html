@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mosaic</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <link rel="stylesheet" type="text/css" href="normalize.css" >
+  <link rel="stylesheet" type="text/css" href="mosaic.css" >
+
+  <script src="mosaic.js"></script>
+</head>
+
+<body>
+
+  <div id="canvas">
+  </div>
+
+  <script>
+    populateMosaicTiles(document.getElementById("canvas"));
+
+    function populateMosaicTiles(canvas) {
+        for (i=0; i<5000; i++) {
+          var tile = document.createElement('div');
+          tile.classList.add("tile");
+          tile.style.background = randomBackgroundColor();
+          tile.style.opacity = Math.random();
+          tile.addEventListener("mouseover", function() {
+            this.style.background = randomBackgroundColor();
+            this.style.opacity = Math.random();
+          } );
+          canvas.appendChild(tile);
+        }
+
+        alert(tile.classList[0]);
+
+    }
+
+    function randomBackgroundColor() {
+      return "rgb(" +
+              randomIntInRange(0, 255) + ", " +
+              randomIntInRange(0, 255) + ", " +
+              randomIntInRange(0, 255) + ")";
+    }
+
+    function randomIntInRange(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;;
+    }
+  </script>
+</body>
+
+</html>
