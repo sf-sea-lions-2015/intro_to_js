@@ -19,7 +19,7 @@
     populateMosaicTiles(document.getElementById("canvas"));
 
     function populateMosaicTiles(canvas) {
-        for (i=0; i<5000; i++) {
+        for (var i=0; i<5000; i++) {
           var tile = document.createElement('div');
           tile.classList.add("tile");
           tile.style.background = randomBackgroundColor();
